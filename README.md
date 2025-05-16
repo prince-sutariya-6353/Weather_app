@@ -188,7 +188,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Your Name - [Prince Sutariya](https://twitter.com/yourtwitter) -
+Your Name - [Prince Sutariya] -
 princegithub6353@gmail.com
 
 Project Link: [https://github.com/yourusername/weather-app](https://github.com/yourusername/weather-app)
