@@ -10,6 +10,11 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", os.urandom(24))
 
+# Add timestamp filter
+@app.template_filter('timestamp_to_time')
+def timestamp_to_time(timestamp):
+    return datetime.fromtimestamp(timestamp).strftime('%I:%M %p')
+
 # API key for OpenWeatherMap
 API_KEY = os.environ.get("WEATHER_API_KEY", "ed3cc874d48e72597b479ba377d9e4cc")
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
