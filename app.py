@@ -172,5 +172,13 @@ def clear_history():
     session['search_history'] = []
     return jsonify({'status': 'success'})
 
+# For local development
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)
+    
+# For Vercel
+app.config.update(
+    SESSION_COOKIE_SECURE=True,
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE='None'
+) 
