@@ -2,7 +2,7 @@
 
 A modern, responsive weather application built with Flask and OpenWeatherMap API. Get real-time weather information, forecasts, and more with a beautiful, user-friendly interface.
 
-![Weather App Screenshot]("C:/Users/PRINCE/OneDrive/Pictures/Screenshot 2025-05-16 150035.png")
+![Weather App Screenshot]("assets/weather.png")
 
 ## ✨ Features
 
