@@ -3,6 +3,7 @@ import requests
 import os
 from dotenv import load_dotenv
 from datetime import datetime
+import pytz
 
 # Load environment variables
 load_dotenv()
@@ -13,7 +14,19 @@ app.secret_key = os.environ.get("SECRET_KEY", os.urandom(24))
 # Add timestamp filter
 @app.template_filter('timestamp_to_time')
 def timestamp_to_time(timestamp):
-    return datetime.fromtimestamp(timestamp).strftime('%I:%M %p')
+    try:
+        # Get the timezone offset from the weather data
+        weather_data = session.get('current_weather_data')
+        if weather_data and 'timezone' in weather_data:
+            # Convert timestamp to local time using the city's timezone
+            local_time = datetime.fromtimestamp(timestamp + weather_data['timezone'])
+            return local_time.strftime('%I:%M %p')
+        else:
+            # Fallback to UTC if timezone not available
+            return datetime.fromtimestamp(timestamp).strftime('%I:%M %p')
+    except Exception as e:
+        # Fallback in case of any error
+        return datetime.fromtimestamp(timestamp).strftime('%I:%M %p')
 
 # API key for OpenWeatherMap
 API_KEY = os.environ.get("WEATHER_API_KEY", "ed3cc874d48e72597b479ba377d9e4cc")
@@ -46,6 +59,8 @@ def index():
                 response.raise_for_status()
                 
                 weather_data = response.json()
+                # Store weather data in session for timezone access
+                session['current_weather_data'] = weather_data
                 
                 # Get 5-day forecast
                 forecast_params = {
@@ -105,6 +120,8 @@ def weather_by_coordinates():
         response = requests.get(BASE_URL, params=params)
         response.raise_for_status()
         weather_data = response.json()
+        # Store weather data in session for timezone access
+        session['current_weather_data'] = weather_data
         
         # Get 5-day forecast
         forecast_params = {
