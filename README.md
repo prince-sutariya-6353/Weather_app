@@ -188,6 +188,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
+Your Name - [prince Sutariya](https://twitter.com/yourtwitter) - email@example.com
 
 Project Link: [https://github.com/yourusername/weather-app](https://github.com/yourusername/weather-app)
