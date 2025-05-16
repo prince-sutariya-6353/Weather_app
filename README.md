@@ -2,7 +2,7 @@
 
 A modern, responsive weather application built with Flask and OpenWeatherMap API. Get real-time weather information, forecasts, and more with a beautiful, user-friendly interface.
 
-![Weather App Screenshot](screenshots/weather-app.png)
+![Weather App Screenshot]("C:\Users\PRINCE\OneDrive\Pictures\Screenshot 2025-05-16 150035.png")
 
 ## ✨ Features
 
@@ -185,10 +185,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Material Design for icons
 - Flask community for the amazing framework
 - All contributors and users of the application
-
-## 📧 Contact
-
-Your Name - [Prince Sutariya] -
-princegithub6353@gmail.com
-
-Project Link: [https://github.com/yourusername/weather-app](https://github.com/yourusername/weather-app)
